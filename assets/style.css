@@ -1,0 +1,112 @@
+:root{
+    background-color: black;
+}
+
+li{
+    padding-bottom: 3px;
+    color: white;
+    text-shadow: 1.5px 1px 3px black;
+    list-style: none;
+}
+
+p{
+    color: white;
+    text-shadow: .5px .5px yellow;
+    text-align: center;
+    font-size: xx-large;
+    font-family: sans-serif;
+}
+
+h2{
+    color: whitesmoke;
+    font-family: sans-serif;
+    margin-top: -0.5rem;
+}
+
+input{
+    text-align: center;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin:0 auto;
+}
+
+button {
+    display: block;
+    font-family: sans-serif;
+    border-radius: 10px;
+    border: 3.5px double white;
+    text-align: center;
+    font-size: 16px;
+    padding: 25px;
+    width: 200px;
+    margin-top: 15px;
+}
+
+button:hover{
+    background-color: #f1ff5c;
+    box-shadow: 0 0.5em 0.5em -0.25em #f1ff5c;
+    transform:translateY(-0.25em);
+    cursor: pointer;
+}
+
+#startpage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#timer{
+    font-family: sans-serif;
+    background-color: #f1ff5c;
+    color: black;
+    font-size: x-large;
+    text-shadow: 0.8px 0.8px #f1ff5c;
+    text-align: center;
+}
+
+#quiz{
+    display: none;
+}
+
+#result{
+    display: none;
+}
+
+#gameover{
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#highScore{
+    height: 1.5rem;
+    border: grrove 3px;
+}
+
+#highscorePage{
+    display: none;
+    width: 50%;
+    border: solid;
+    border-color: white;
+    border-bottom-style: groove;
+    padding-bottom: .3rem;
+    background:#f1ff5c;
+}
+
+#highscore-header{
+    display: flex;
+    justify-content: space-around;
+    border-bottom-style: outset;
+    margin-bottom: 0.5rem;
+    background-color: #f1ff5c;
+    color: aliceblue;
+    font-family: sans-serif;
+}
