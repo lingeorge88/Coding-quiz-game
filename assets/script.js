@@ -130,21 +130,21 @@ submitScoreBtn.addEventListener("click", function highscore(){
 });
 // generates high score list from local storage
 function generateHighscores(){
-    highscoreDisplayName.textContent = "",
-    displayHighscore.textContent = "",
+    highscoreDisplayName.textContent = "";
+    displayHighscore.textContent = "";
     var highscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
     for (i=0; i<highscores.length; i++){
         var newNameSpan = document.createElement("li");
         var newScoreSpan = document.createElement("li");
         newNameSpan.textContent = highscores[i].name;
         newScoreSpan.textContent = highscores[i].score;
-        highscoreDisplayNmae.appendChild(newNameSpan);
+        highscoreDisplayName.appendChild(newNameSpan);
         displayHighscore.appendChild(newScoreSpan);
     }
 }
 // function shows the high scores page and hides other sections of the page
 function showHighscore(){
-    startQuiz.style.display="none";
+    startQuizDiv.style.display="none";
     gameoverDiv.style.display="none";
     highscoreContainer.style.display="flex";
     highScoreDiv.style.display = "block";
@@ -156,7 +156,7 @@ function showHighscore(){
 function clearScore(){
     window.localStorage.clear();
     highscoreDisplayName.textContent = "";
-    displayHighscore.textContent = "",
+    displayHighscore.textContent = "";
 }
 
 // allows user to replay quiz by setting all the variables to their original values
@@ -172,7 +172,7 @@ function replayQuiz(){
 function checkAnswer(answer){
     correct = questions[currentQuentionIndex].correctAnswer;
     if (answer === correct && currentQuentionIndex !== finalQuestionIndex){
-        score +=100;
+        score ++;
         alert("That is correct!")
         currentQuentionIndex++;
         generateQuizQuestion();
