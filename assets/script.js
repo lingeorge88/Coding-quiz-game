@@ -10,7 +10,7 @@ var startQuizDiv = document.querySelector("#startpage");
 var highscoreContainer = document.querySelector("#highscoreContainer");
 var highScoreDiv = document.querySelector("#highscorePage");
 var highscoreInputName = document.querySelector("#initials");
-var highscoreDisplayNmae = document.querySelector("#highscore-initials");
+var highscoreDisplayName = document.querySelector("#highscore-initials");
 var endGamebtns = document.querySelector("#endGameBtn");
 var submitScoreBtn = document.querySelector("#submitScore");
 var displayHighscore = document.querySelector("#highscore-score");
@@ -106,22 +106,7 @@ function showScore(){
     finalScoreEl.textContent = "You got " + score + " out of " + questions.length + " correct!";
 }
 
-// function checks the answers for each question
-function checkAnswer(answer){
-    correct = questions[currentQuentionIndex].correctAnswer;
-    if (answer === correct && currentQuentionIndex !== finalQuestionIndex){
-        score +=100;
-        alert("That is correct!")
-        currentQuentionIndex++;
-        generateQuizQuestion();
-    }else if (answer !== correct && currentQuentionIndex !== finalQuestionIndex){
-        alert("That is incorrect!")
-        currentQuentionIndex++;
-        generateQuizQuestion();
-    }else{
-        showScore();
-    }
-}
+
 // hitting the submit highscore button lets us store the high score and user name into local storage
 submitScoreBtn.addEventListener("click", function highscore(){
     if (highscoreInputName.value === "") {
@@ -145,7 +130,7 @@ submitScoreBtn.addEventListener("click", function highscore(){
 });
 // generates high score list from local storage
 function generateHighscores(){
-    highscoreDisplayNmae.textContent = "",
+    highscoreDisplayName.textContent = "",
     displayHighscore.textContent = "",
     var highscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
     for (i=0; i<highscores.length; i++){
@@ -167,5 +152,37 @@ function showHighscore(){
     generateHighscores();
 }
 
+// clears local storage of previously stored high scores and clearing the text from the high score board
+function clearScore(){
+    window.localStorage.clear();
+    highscoreDisplayName.textContent = "";
+    displayHighscore.textContent = "",
+}
+
+// allows user to replay quiz by setting all the variables to their original values
+function replayQuiz(){
+    highscoreContainer.style.display = "none";
+    gameoverDiv.style.display = "none";
+    startQuizDiv.style.display = "flex";
+    timeLeft = 65;
+    score = 0;
+    currentQuentionIndex = 0;
+}
+// function checks the answers for each question
+function checkAnswer(answer){
+    correct = questions[currentQuentionIndex].correctAnswer;
+    if (answer === correct && currentQuentionIndex !== finalQuestionIndex){
+        score +=100;
+        alert("That is correct!")
+        currentQuentionIndex++;
+        generateQuizQuestion();
+    }else if (answer !== correct && currentQuentionIndex !== finalQuestionIndex){
+        alert("That is incorrect!")
+        currentQuentionIndex++;
+        generateQuizQuestion();
+    }else{
+        showScore();
+    }
+}
 // hitting the start quiz button starts the quiz
 startQuizbtn.addEventListener("click",startQuiz);
