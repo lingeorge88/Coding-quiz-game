@@ -179,6 +179,7 @@ function checkAnswer(answer){
     }else if (answer !== correct && currentQuentionIndex !== finalQuestionIndex){
         alert("That is incorrect!")
         currentQuentionIndex++;
+        timeLeft -=5;
         generateQuizQuestion();
     }else{
         showScore();
