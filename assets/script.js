@@ -64,6 +64,7 @@ var timeLeft = 65;
 var timerInterval;
 var score = 0;
 var correct;
+var savedHighscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
 
 // funtion generating quiz questions and answers
 function generateQuizQuestion(){
@@ -113,7 +114,7 @@ submitScoreBtn.addEventListener("click", function highscore(){
         alert("initials cannot be empty, please enter a value")
         return false;
     }else{
-        var savedHighscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
+        // var savedHighscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
         var currentUser = highscoreInputName.value.trim();
         var currentHighscore = {
             name : currentUser,
