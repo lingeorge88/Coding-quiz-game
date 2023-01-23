@@ -7,7 +7,6 @@ var questionsEl = document.querySelector("#questions");
 var quizTimer = document.querySelector("#timer");
 var startQuizbtn = document.querySelector("#startbtn");
 var startQuizDiv = document.querySelector("#startpage");
-var highscoreHeader = document.querySelector("#highScore-header");
 var highscoreContainer = document.querySelector("#highscoreContainer");
 var highScoreDiv = document.querySelector("#highscorePage");
 var highscoreInputName = document.querySelector("#initials");
@@ -65,7 +64,7 @@ var timeLeft = 65;
 var timerInterval;
 var score = 0;
 var correct;
-var savedHighScores = JSON.parse(localStorage.getItem("savedHighScores")) || [];
+var savedHighscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
 
 // funtion generating quiz questions and answers
 function generateQuizQuestion(){
@@ -121,13 +120,12 @@ submitScoreBtn.addEventListener("click", function highscore(){
             name : currentUser,
             score: score,
         };
-        // savedHighScores.push(currentHighscore);
-        // gameoverDiv.style.display = "none";
+        gameoverDiv.style.display = "none";
         highscoreContainer.style.display = "flex";
         highScoreDiv.style.display = "block";
         endGamebtns.style.display= "flex";
-        // savedHighscores.push(currentHighscore);
-        localStorage.setItem("savedHighScores", JSON.stringify(savedHighScores));
+        savedHighscores.push(currentHighscore);
+        localStorage.setItem("savedHighScores", JSON.stringify(savedHighscores));
         generateHighscores();
     }
 });
@@ -141,8 +139,8 @@ function generateHighscores(){
         var newScoreSpan = document.createElement("p");
         newNameSpan.textContent = "Name: " + highscores[i].name;
         newScoreSpan.textContent ="Score: " + highscores[i].score;
-        highscoreHeader.appendChild(newNameSpan);
-        highscoreHeader.appendChild(newScoreSpan);
+        highscoreDisplayName.appendChild(newNameSpan);
+        displayHighscore.appendChild(newScoreSpan);
     }
 }
 // function shows the high scores page and hides other sections of the page
