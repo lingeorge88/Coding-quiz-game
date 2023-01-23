@@ -133,12 +133,12 @@ submitScoreBtn.addEventListener("click", function highscore(){
 function generateHighscores(){
     highscoreDisplayName.textContent = "";
     displayHighscore.textContent = "";
-    var highscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
+    var highscores = JSON.parse(localStorage.getItem("savedHighScores")) || [];
     for (i=0; i<highscores.length; i++){
-        var newNameSpan = document.createElement("li");
-        var newScoreSpan = document.createElement("li");
-        newNameSpan.textContent = highscores[i].name;
-        newScoreSpan.textContent = highscores[i].score;
+        var newNameSpan = document.createElement("p");
+        var newScoreSpan = document.createElement("p");
+        newNameSpan.textContent = "Name: " + highscores[i].name;
+        newScoreSpan.textContent ="Score: " + highscores[i].score;
         highscoreDisplayName.appendChild(newNameSpan);
         displayHighscore.appendChild(newScoreSpan);
     }
