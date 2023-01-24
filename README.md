@@ -18,7 +18,7 @@ This application was developed using HTML, CSS, and Javascript as part of a clas
 
 ### Executing program
 
-* Open the web application through the following link: 
+* Open the web application through the following link: https://lingeorge88.github.io/Coding-quiz-game/
 * Execute the application by hitting the "Start Quiz!" button on the homepage
 
 
@@ -26,8 +26,8 @@ This application was developed using HTML, CSS, and Javascript as part of a clas
 
 * First answer the series of questions and the program will determine if the answers are correct or incorrect
 * At the end of the quiz a score will be generated and user will be promted to enter their initials
-* After entering the user initlas, the user will have the option to play the quiz again or clear the previous high scores
-* The play again button takes the user to the homepage and will allow the user to play the game again or view previous highscores
+* After entering the user initials, the user will have the option to play the quiz again or clear the previous high scores
+* The "Play again" button takes the user to the homepage and will allow the user to play the game again or view previous highscores
 
 
 ## Authors
@@ -46,4 +46,4 @@ Github: https://github.com/lingeorge88
 N/A
 
 ## Acknowledgments
-N/A
+* Thank you to the askBCS Learning Assitants and TAs for the help with troubleshooting during the build process.
