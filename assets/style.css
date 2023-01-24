@@ -79,8 +79,16 @@ button:hover, button:focus{
     }
 #quiz {
         display: none;
+        text-align:center;
     }
-    
+ #questions{
+    font-family: sans-serif;
+    color:white;
+    text-align:center;
+    font-size: x-large;
+    font-weight: 500;
+    margin-bottom: 8px;
+ }   
 #result {
         display: none;
     }
@@ -116,6 +124,8 @@ button:hover, button:focus{
         color: #eeeeee;
         font-family: sans-serif;
     }
+
+
 #highscoreContainer{
         height: 100%;
         width: 100%;
@@ -124,7 +134,7 @@ button:hover, button:focus{
         align-items: center;
         justify-content: center;
     }
-    
+
 #initials{
         margin: .5rem;
         height: 1.75rem;

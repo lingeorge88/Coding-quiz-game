@@ -141,6 +141,8 @@ function generateHighscores(){
         newScoreSpan.textContent ="Score: " + highscores[i].score;
         highscoreDisplayName.appendChild(newNameSpan);
         displayHighscore.appendChild(newScoreSpan);
+        highscoreDisplayName.setAttribute('style', 'margin: 5px');
+        displayHighscore.setAttribute('style', 'margin: 5px');
     }
 }
 // function shows the high scores page and hides other sections of the page
